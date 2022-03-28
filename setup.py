@@ -22,9 +22,12 @@ requires = [
     "pdfminer.six>=20200726",
     "PyPDF2>=1.26.0",
     "tabulate>=0.8.9",
+    "ghostscript>=0.7",
+    "opencv-python>=3.4.2.17",
+    "pdftopng>=0.2.3"
 ]
 
-base_requires = ["ghostscript>=0.7", "opencv-python>=3.4.2.17", "pdftopng>=0.2.3"]
+base_requires = []
 
 plot_requires = [
     "matplotlib>=2.2.3",
@@ -59,7 +62,7 @@ def setup_package():
         install_requires=requires,
         extras_require={
             "all": all_requires,
-            "base": base_requires,
+            "base": base_requires, # deprecate
             "cv": base_requires,  # deprecate
             "dev": dev_requires,
             "plot": plot_requires,
